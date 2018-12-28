@@ -1,0 +1,31 @@
+
+Challenge
+=========
+
+Sort the words in alphabetical order and then work out their total value. The value of a single word is defined by the following:
+
+word value = position of word in sorted list * sum of values of all letters in word
+
+For example, the word "bland" appears 10th in the sorted list of words. Its letters are valued by their position in the alphabet, as follows: B=2, L=12, A=1, N=14, D=4, which gives a total of 2+12+1+14+4=33. So the value of the word is 10*33=330.
+
+Flag format: flag{answer}
+
+
+Solution
+========
+
+# Answer is 544206
+# Solution written in Python
+
+with open("words.txt") as f:
+    words = f.read().split()
+
+words.sort()
+total = 0
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+for pos, word in enumerate(words):
+    position = pos + 1
+    letters = sum(alphabet.find(letter) + 1 for letter in word)
+    total += position * letters
+
+print total

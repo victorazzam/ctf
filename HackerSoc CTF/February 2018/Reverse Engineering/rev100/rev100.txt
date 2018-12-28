@@ -1,0 +1,41 @@
+
+Challenge
+=========
+
+Somebody sent me a message and a file to go with it, can you find the sender's name? I've figured out the first two words are "No one" but I need the rest of the message to get the sender's name. Send help, thanks!
+
+Ur(puh(tor}mk#jf'djml#|p'vvpvs(pu#uz'vmdyh|t3#jv{#Q!nxmtz#ap|#mbyqme'l|/'0(W7ol4tRz8
+
+Flag format: flag{sender}
+
+Hint: Invert one sign and then brute force, it's only 4 digits!
+
+
+Solution
+========
+
+# Answer is 7381
+# Flag is flag{V0ld3mOr7}
+
+from sys import stdout
+
+msg = "Ur(puh(tor}mk#jf'djml#|p'vvpvs(pu#uz'vmdyh|t3#jv{#Q!nxmtz#ap|#mbyqme'l|/'0(W7ol4tRz8"
+
+for p in range(10000):
+	pin = str(p).zfill(4)
+	stdout.write("\r" + pin)
+	stdout.flush()
+	final = ""
+	for y, i in enumerate(msg):
+		final += chr(ord(i) - int(pin[y % 4]))
+	if final.startswith("No one"):
+		print "\n" + final
+		break
+
+
+Setup
+=====
+
+No one should be able to snoop on my secrets, but I guess You earned it. - V0ld3mOr7
+
+Run the above string through encrypt.py with 7381 as the pin.

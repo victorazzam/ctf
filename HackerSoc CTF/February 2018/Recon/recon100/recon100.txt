@@ -1,0 +1,17 @@
+
+Challenge
+=========
+
+Where was this scene filmed?
+
+Flag format: flag{NameWithoutSpaces}
+
+Hint: This scene from Mr Robot S01E01 is set in a fictional cafe called Ron's Coffee.
+
+
+Solution
+========
+
+flag{ThinkCoffee}
+
+http://mrrobot.wikia.com/wiki/Ron

@@ -1,0 +1,17 @@
+
+Challenge
+=========
+
+Flag generator... is it legit?
+
+https://hackersoc.tk/ctf/web50/
+
+Hint: Nope ;)
+
+(The hint is free.)
+
+
+Solution
+========
+
+Stored as a comment in the CSS file: flag{4lways_ch3ck_y0ur-5ources++*#}

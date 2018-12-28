@@ -1,0 +1,33 @@
+
+Challenge
+=========
+
+I protect my house with four rails before my fence.
+
+tioafhlsdtlschergogsh9Juolb
+
+Flag format: flag{...}
+
+
+Setup
+=====
+
+Service used: http://www.cs.du.edu/~snarayan/crypt/vigenere.html
+
+th1s/i5-n0t_r3al+cryp7o
+
+PROCRASTINATE
+
+iy1g/k5-e0t_j3tt+prrt7d
+
+(https://hastebin.com/raw/oboxokukex)
+https://pastebin.com/XLM0eWe9
+
+(https://goo.gl/b9cfhJ)
+https://goo.gl/Z12Uvt
+
+http://rumkin.com/tools/cipher/railfence.php
+
+Rails: 4
+Text: theurlisgoodotglslashZ12Uvt
+Cipher: tioaUhlsdtls2vergogsh1tuolZ

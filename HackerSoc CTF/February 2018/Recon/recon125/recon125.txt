@@ -1,0 +1,14 @@
+
+Challenge
+=========
+
+In mathematics, the area of a shape is its width multiplied by its length. Xor the area of the image with the time in HHMM format.
+
+Flag format: flag{answer}
+
+
+Solution
+========
+
+Answer: (437 × 211) ^ 1338
+Flag: flag{93461}

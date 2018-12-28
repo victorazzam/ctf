@@ -1,0 +1,29 @@
+
+Challenge
+=========
+
+1752 is the sum of ten consecutive prime numbers less than 500. What is the value of the first number?
+
+Flag format: flag{answer}
+
+
+Solution
+========
+
+# Answer is 151
+# Solution written in Python
+
+def is_prime(n):
+    if n < 2: return 0
+    for i in range(2, n):
+        if not n % i: return 0
+    return 1
+
+a = filter(is_prime, range(500))
+try:
+    for i in range(len(a)):
+        if sum(a[i:i+10]) == 1752:
+            print a[i]
+            break
+except:
+    pass

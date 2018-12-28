@@ -1,0 +1,15 @@
+
+Challenge
+=========
+
+Our agents' data is always kept safe from identity thieves.
+
+https://hackersoc.tk/ctf18/web100/
+
+
+Solution
+========
+
+Change the User Agent string to: James Bond 007
+
+flag{us3r_4gent_1s_n0t_5ecure}

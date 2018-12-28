@@ -1,0 +1,55 @@
+
+Challenge
+=========
+
+1. Subtract the RGB values of each pixel in a.png from b.png top-left to bottom-right.
+2. For each pixel in the new image, again top-left to bottom-right, append the R value to a string if R > 127 and G < 98 and B < 184.
+3. Get the MD5 value of the final string.
+
+Flag format: flag{answer}
+
+
+Solution
+========
+
+flag{394d14888f4cde8dc68e69fcc47fbefd}
+
+from PIL import Image
+from hashlib import md5
+img1, img2 = Image.open("b.png"), Image.open("a.png")
+pixels1, pixels2 = img1.load(), img2.load()
+pix1 = [[pixels1[x,y] for x in range(50)] for y in range(50)]
+pix2 = [[pixels2[x,y] for x in range(50)] for y in range(50)]
+data = []
+for i in range(50):
+    tmp = []
+    for x in range(50):
+        tmp.append((pix1[i][x][0] - pix2[i][x][0], pix1[i][x][1] - pix2[i][x][1], pix1[i][x][2] - pix2[i][x][2]))
+    data.append(tmp)
+
+end = ""
+for i in range(50):
+    for x in range(50):
+        color = data[i][x]
+	if color[0] > 127 and color[1] < 98 and color[2] < 184:
+            end += str(color[0])
+
+print end
+print md5(end).hexdigest()
+
+# Uncomment to save new image
+# img = Image.new("RGB", (50, 50))
+# img.putdata([i for x in data for i in x])
+# img.save("newimg.png", "PNG")
+
+Setup
+=====
+
+from PIL import Image
+img1, img2 = Image.new("RGB", (50, 50)), Image.new("RGB", (50, 50))
+b_png_data = [[tuple(random.randint(128, 256) for y in "123") for i in range(50)] for x in range(50)]
+a_png_data = [[tuple(random.randint(1, 128) for y in "123") for i in range(50)] for x in range(50)]
+img1.putdata([i for x in b_png_data for i in x])
+img2.putdata([i for x in a_png_data for i in x])
+img1.save("b.png")
+img2.save("a.png")

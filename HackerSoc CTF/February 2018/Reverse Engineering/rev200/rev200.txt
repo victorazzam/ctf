@@ -1,0 +1,56 @@
+
+Challenge
+=========
+
+You'll never get past the military-grade encryption used on our new login page!
+
+https://hackersoc.tk/ctf/rev200/
+
+Hint: Here's a writeup for a similar challenge: https://goo.gl/pj8mtY
+
+
+Solution
+========
+
+Username: _secure_long_username_
+Password: flag{p0Or_cLieNt_s1de}
+
+Right click, select Inspect Element and open the Console tab.
+
+Paste the following code to get the flag:
+
+var user = "\x5f\x73\x65\x63\x75\x72\x65\x5f\x6c\x6f\x6e\x67\x5f\x75\x73\x65\x72\x6e\x61\x6d\x65\x5f";
+var pass = new Array(0xc5, 0x512, 0xa24, 0x235, 0x910, 0x1587, 0x9b3, 0x2185, 0x1a0e, 0x1409, 0x1161, 0x137a, 0x1c40, 0x2d15, 0x4769, 0x1df8, 0x4b21, 0x2ce8, 0x13a0, 0x1c8, 0x6222, 0x67f9);
+var arr = [];
+function random(n) {
+    return 11111 * 11111 % n
+}
+for (var i = 0; i < pass.length; i++) {
+    arr.push(pass[i] - i*random(i+1337) - user.charCodeAt(i))
+}
+flag = "";
+for (var i = 0; i < arr.length; i++) {
+    flag+=String.fromCharCode(arr[i])
+}
+
+
+Setup
+=====
+
+Adapted from RingZer0 CTF with some obfuscation and different credentials.
+
+$ python
+>>> random = lambda x: 11111*11111%x
+>>> u = "_secure_long_username_"
+>>> p = "flag{p0Or_cLieNt_s1de}"
+>>> a = [ord(x) + ord(p[y]) + y * random(y+1337) for y, x in enumerate(u)]
+>>> print str([hex(x) for x in a]).replace("'",'')
+[0xc5, 0x512, 0xa24, 0x235, 0x910, 0x1587, 0x9b3, 0x2185, 0x1a0e, 0x1409, 0x1161, 0x137a, 0x1c40, 0x2d15, 0x4769, 0x1df8, 0x4b21, 0x2ce8, 0x13a0, 0x1c8, 0x6222, 0x67f9]
+>>> print "\\x" + "\\x".join(x.encode("hex") for x in u)
+\x5f\x73\x65\x63\x75\x72\x65\x5f\x6c\x6f\x6e\x67\x5f\x75\x73\x65\x72\x6e\x61\x6d\x65\x5f
+
+Insert the first output into $pass and the second output into $user in the JS code.
+
+The rest is up to the implementation used, the source code is self explanatory.
+
+Hint link analytics: https://goo.gl/#analytics/goo.gl/pj8mtY/all_time

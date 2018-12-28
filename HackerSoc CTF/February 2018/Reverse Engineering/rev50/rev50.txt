@@ -1,0 +1,8 @@
+Challenge
+=========
+Run the file and try to guess the secret combination!
+
+Solution
+========
+Decompile online http://www.javadecompilers.com
+flag{r3verse_eng1neering_i5_n0_e4sy_fea7}

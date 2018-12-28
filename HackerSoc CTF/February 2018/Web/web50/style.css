@@ -1,0 +1,151 @@
+/*--------------------------------------------------------------
+Global
+--------------------------------------------------------------*/
+body {
+	margin: 1em;
+	color: black;
+	font-family: "Fira Code", monospace;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.masthead {
+	text-align: center;
+}
+
+.interface {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  border: 5px solid #f44336;
+  border-radius: .75em;
+  padding: .7em 1.25em;
+  margin: 1em .5em 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.button:focus,
+.button:hover {
+  background: #f44336a6;
+  color: white;
+}
+.box-grid {
+  margin: 2em;
+  padding: .5em;
+	border: 5px solid #41444B;
+	border-radius: 15px;
+}
+
+/*--------------------------------------------------------------
+Box styles
+--------------------------------------------------------------*/
+
+.box-grid li {
+  list-style-type: none;
+	padding: 1em;
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000;
+	border-radius: 7px;
+/*   min-height: 5em; */
+}
+
+.box-grid li:nth-child(7n+1) {
+  border: 5px solid hsl(204, 63%, 45%);
+	background-color: hsla(204, 63%, 45%, .5);
+}
+
+.box-grid li:nth-child(7n+2) {
+	border: 5px solid hsl(283, 43%, 47%);
+	background-color: hsla(283, 43%, 47%, .5);
+}
+
+.box-grid li:nth-child(7n+3) {
+	border: 5px solid hsl(169, 76%, 35%);
+	background-color: hsla(169, 76%, 35%, .5);
+}
+
+.box-grid li:nth-child(7n+4) {
+	border: 5px solid hsl(48, 89%, 50%);
+	background-color: hsla(48, 89%, 50%, .5);
+}
+
+.box-grid li:nth-child(7n+5) {
+	border: 5px solid hsl(28, 80%, 52%);
+	background-color: hsla(28, 80%, 52%, .5);
+}
+
+.box-grid li:nth-child(7n+6) {
+	border: 5px solid hsl(5, 80%, 58%);
+	background-color: hsla(5, 80%, 58%, .5);
+}
+
+.box-grid li:nth-child(7n+7) {
+	border: 5px solid hsl(210, 28%, 29%);
+	background-color: hsla(210, 28%, 29%, .5);
+}
+
+/* Base grid */
+.box-grid {
+	display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+	justify-content: center;
+  align-content: center;
+	grid-gap: .5em;
+}
+
+/* Two columns */
+@element '.box-grid' and (min-children: 2) {
+  :self {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Three items */
+@element '.box-grid' and (min-children: 3) and (max-children: 3) {
+  :self li:first-child {
+    grid-column: 1/3;
+  }
+}
+
+/* Five items */
+@element '.box-grid' and (min-children: 5) and (max-children: 5) {
+  :self li:first-child {
+    grid-row: 1/3;
+  }
+}
+
+/* Six items */
+@element '.box-grid' and (min-children: 6) and (max-children: 6) {
+  :self li:first-child {
+    grid-row: 1/3;
+  }
+  :self li:last-child {
+    grid-column: 2/3;  
+    grid-row: 3/5;
+  }
+}
+
+/* Six items  flag{4lways_ch3ck_y0ur-5ources++*#}  */
+@element '.box-grid' and (min-children: 7) and (max-children: 7) {
+  :self {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 5em);
+  }
+  :self li:first-child {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  :self li:nth-child(3) {
+    grid-column: 3/4;  
+    grid-row: 2/4;
+  }
+  :self li:nth-child(5) {
+    grid-column: 2/3;  
+    grid-row: 3/5;
+  }
+}

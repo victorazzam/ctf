@@ -1,0 +1,42 @@
+
+Challenge
+=========
+
+Hmmm... I wonder what the most common passwords are.
+
+aHR0cHM6Ly9oYXN0ZWJpbi5jb20vcmF3L3Rpdm96b2NhbHUK
+
+Hint: Many online tools strip metadata, instead try writing/finding a script.
+
+
+Solution
+========
+
+Decode Base64, visit link, decode Base64, decode Brainfuck, decode Base64, visit link, decode Base64 into a file, try common passwords on the PDF (first link on Google).
+
+Password is: 123456
+Flag is: flag{_#;-%%^,<~S]]_}
+
+
+Setup
+=====
+
+Inspired by: https://redd.it/7lsw1w
+
+flag{_#;-%%^,<~S]]_}
+
+Place as "Creator" metadata value in a PDF
+
+Encode with Base64
+
+Place on Hastebin	https://hastebin.com/raw/afazuvenih
+
+Encode with Base64	aHR0cHM6Ly9oYXN0ZWJpbi5jb20vcmF3L2FmYXp1dmVuaWgK
+
+Encode with Brainfuck
+
+Encode with Base64
+
+Place on Hastebin	https://hastebin.com/raw/tivozocalu
+
+Encode with Base64	aHR0cHM6Ly9oYXN0ZWJpbi5jb20vcmF3L3Rpdm96b2NhbHUK

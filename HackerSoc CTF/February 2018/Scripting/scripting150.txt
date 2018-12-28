@@ -1,0 +1,34 @@
+
+Challenge
+=========
+
+Fibonacci sequence consists of numbers formed by the sum of the previous two numbers. Here are the first few numbers in the sequence:
+
+Number	1  1  2  3  5  8  13 21 34 55 89 144
+Index	1  2  3  4  5  6  7  8  9  10 11 12
+
+At what index is the first Fibonacci number that contains 1337 digits?
+
+Flag format: flag{answer}
+
+
+Solution
+========
+
+# Answer is 6395
+# Solution written in Python
+
+def fibonacci():
+    a, b = 1, 1
+    while 1:
+        yield a
+        a, b = b, a + b
+
+fib = fibonacci()
+c = 0
+while 1:
+    a = str(next(fib))
+    c += 1
+    if len(a) == 1337: break
+
+print c

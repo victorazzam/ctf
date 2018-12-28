@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Random Flag Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Design taken from https://codepen.io/mor10/pen/QQGxEa -->
+  <header class="masthead">
+    <div class="site-branding">
+      <h1 class="site-title">Random Flag Generator</h1>
+        <p class="site-description">Press the buttons to create/destroy flags!</p>
+    </div>
+  </header>
+  <section class="the-boxes">
+    <nav class="interface">
+      <button id="more" class="button" style="outline-width:0">Flags++</button>
+      <button id="less" class="button" style="outline-width:0">Flags--</button>
+    </nav>
+    <ul class="box-grid">
+      <li>flag{nope, not a flag}</li>
+    </ul>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/eqcss/1.8.0/EQCSS.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/eqcss/1.8.0/EQCSS-polyfills.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

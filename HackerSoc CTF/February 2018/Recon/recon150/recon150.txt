@@ -1,0 +1,36 @@
+
+Challenge
+=========
+
+Someone sent me this file but I can't figure out what it means. They said the flag is in there somewhere.
+
+Hint: Ever heard of an Esolang?
+
+
+Solution
+========
+
+Translate to Brainfuck using https://esolangs.org/wiki/Omam
+
+mamo = {'the screams all sound the same': ',', 'deep into the mountain sound': '-', 'though the truth may vary': '[', 'sleep until the sun goes down': '<', 'this ship will carry': ']', 'hold your horses now': '>', "don't listen to a word i say": '.', 'through the woods we ran': '+'}
+with open("omam.script") as f:
+    print "".join(mamo[x] for x in f.read().split("\n"))
+
+--[----->+<]>.++++++.-----------.++++++.[----->+<]>.-[++>---<]>-.[->++++++<]>++.>-[----->+<]>.---.++.+++++++++++++++.+++.+.[--->++<]>+++.++++++.+++++++++++.------------.[->++++++<]>+.----.>-[----->+<]>-.-..>--[-->+++<]>.
+
+Run through an online interpreter to get the flag: flag{6F302ADE17B6EA211}
+
+
+Setup
+=====
+
+Create a flag: flag{6F302ADE17B6EA211}
+
+Translate into Brainfuck using https://copy.sh/brainfuck/text.html
+
+Translate into Omam
+
+omam = {',': 'the screams all sound the same', '[': 'though the truth may vary', ']': 'this ship will carry', '+': 'through the woods we ran', '.': "don't listen to a word i say", '-': 'deep into the mountain sound', '<': 'sleep until the sun goes down', '>': 'hold your horses now'}
+bf = "--[----->+<]>.++++++.-----------.++++++.[----->+<]>.-[++>---<]>-.[->++++++<]>++.>-[----->+<]>.---.++.+++++++++++++++.+++.+.[--->++<]>+++.++++++.+++++++++++.------------.[->++++++<]>+.----.>-[----->+<]>-.-..>--[-->+++<]>."
+with open("omam.script", "w") as f:
+    f.write("\n".join(omam[x] for x in bf))

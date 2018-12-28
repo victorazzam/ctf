@@ -1,0 +1,60 @@
+
+Challenge
+=========
+
+Can you decrypt the flag using the information supplied in the public key?
+
+Files given:  encrypted_flag.txt  mykey.pub
+
+Hint: Use factordb.com to get the primes of the modulus of mykey.pub (the public key).
+      Use rsatool.py to make a PEM file. Then use the command "openssl" on the PEM and
+      flag files to decrypt the flag. Google should help you with all these :)
+
+(The hint costs 50 points.)
+
+
+Solution
+========
+
+Files given:  encrypted_flag.txt  mykey.pub
+
+1. Get the modulus from the public key
+--------------------------------------
+openssl rsa -pubin -inform PEM -text -noout < mykey.pub
+
+2. Convert the modulus into an integer
+--------------------------------------
+Run Python and enter the following:
+>>> print int("""PASTE_MODULUS_HERE""".strip().replace(":","").replace(" ","").replace("\n",""),16)
+
+3. Factorise on factordb.com to get the two primes
+--------------------------------------------------
+p = 10570796208942330718133134445050881347580442327501864726780301183323228790933543286750277085897914122428857455856744411456476812241092677201917577388557109
+q = 12409530116611113069722673907902939927077171750562461687594137012713380508978436132121375571419505917625282847052267327325475909667939575657231740096180389
+
+4. Use https://github.com/ius/rsatool to generate a PEM file using p & q
+------------------------------------------------------------------------
+python rsatool.py -p p_value -q q_value -o private.pem
+
+5. Decrypt the flag with the private key (PEM file)
+---------------------------------------------------
+openssl rsautl -decrypt -inkey private.pem -in encrypted_flag.txt
+
+Output: Ain't cryptography a great thing! flag{:RSA:1O24:bit:aint:th4t:d0pe~}
+Flag: flag{:RSA:1O24:bit:aint:th4t:d0pe~}
+
+
+Setup
+=====
+
+1. Generate a 1024-bit RSA keypair
+----------------------------------
+openssl genrsa -out mykey.pem 1024
+
+2. Extract the public part of the key
+-------------------------------------
+openssl rsa -in mykey.pem -pubout > mykey.pub
+
+3. Encrypt the flag with the public key
+---------------------------------------
+echo "Ain't cryptography a great thing! flag{:RSA:1O24:bit:aint:th4t:d0pe~}" | openssl rsautl -encrypt -pubin -inkey mykey.pub > encrypted_flag.txt

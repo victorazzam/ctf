@@ -1,0 +1,7 @@
+Challenge
+=========
+Mmmmmm I love me some chicken caesar salad!
+
+Solution
+========
+The string "u3c1tz0lj_5klww" decodes to "d3l1ci0us_5tuff" when rotated by 9 spaces.

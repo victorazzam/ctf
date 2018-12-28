@@ -1,0 +1,30 @@
+
+Challenge
+=========
+
+Who bought chocolate ice-cream on Paddy's day at 13:37:00 last year?
+
+Flag format: flag{NameWithoutSpaces}
+
+https://hackersoc.tk/ctf/rev150/?hash=5296c024e03e439ba3d72c8e432d4f890b3cd0d2c36d67d428aa1e401e675b69&time=1519219800
+
+Hint: The hash is the ice-cream flavour in SHA256 form. The time is a Unix timestamp.
+
+
+Setup
+=====
+
+Default flavour: vanilla
+Default time: Wednesday February 21st 2018
+
+Correct answer: ?hash=7499aced43869b27f505701e4edc737f0cc346add1240d4ba86fbfa251e0fc35&time=1489757820
+
+The hash is the ice-cream flavour in SHA256 form. The time is a Unix timestamp.
+
+Accept random dates and display random names, but for the correct combination show:
+
+Customer					Flavour		Price
+---------------------------------------------------------------------
+Ovuvuevuevue Enyetuenwuevue Ugbemugbem Osas	Chocolate	€1.50
+
+flag{OvuvuevuevueEnyetuenwuevueUgbemugbemOsas}

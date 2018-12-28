@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Way</title>
+	<style>
+body {
+	background: #000;
+	color: #fff;
+	font-family: sans-serif;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+a {
+	color: lightblue;
+	text-decoration: none;
+}
+a:hover {text-decoration:underline}
+#images { width: 600px; height: 550px; overflow-x: hidden; text-align: center; list-style: none; }
+.endless_scroll_loader {
+	position: fixed;
+	top: 10px;
+	right: 20px;
+}
+ul {padding:0}
+	</style>
+	<!-- Shoutout to https://github.com/fredwu/jquery-endless-scroll for the code on this page. -->
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.endless-scroll.js"></script>
+	<script type="text/javascript" charset="utf-8">
+$(function() {
+	$('#list').endlessScroll({
+		pagesToKeep: 10,
+		fireOnce: false,
+		insertBefore: "#list div:first",
+		insertAfter: "#list div:last",
+		content: function(i, p) {
+			console.log(i, p)
+			return '<li>' + p + '</li>'
+		},
+		ceaseFire: function(i) {
+			if (i >= 10) {
+				return true;
+			}
+		},
+		intervalFrequency: 5
+	});
+	$('#images').scrollTop(101);
+	var images = $("ul#images").clone().find("li");
+	$('#images').endlessScroll({
+	pagesToKeep: 5,
+		inflowPixels: 100,
+		fireDelay: 10,
+		content: function(i, p, d) {
+			console.log(i, p, d)
+			return images.eq(Math.floor(Math.random()*8))[0].outerHTML;
+		}
+	});
+});
+	</script>
+</head>
+<body>
+<main>
+	<h1>Way</h1>
+	<ul id="images">
+      <li><img src="grass-blades.jpg" width="580" height="360" alt="Grass Blades" /></li>
+      <li><img src="stones.jpg" width="580" height="360" alt="Stones" /></li>
+      <li><img src="sea-mist.jpg" width="580" height="360" alt="Sea Mist" /></li>
+      <li><img src="pier.jpg" width="580" height="360" alt="Pier" /></li>
+      <li><img src="lotus.jpg" width="580" height="360" alt="Lotus" /></li>
+      <li><img src="mojave.jpg" width="580" height="360" alt="Mojave" /></li>
+      <li><img src="lightning.jpg" width="580" height="360" alt="Lightning" /></li>
+      <li><img src="flowing-rock.jpg" width="580" height="360" alt="Grass Blades" /></li>
+    </ul>
+	<div>
+		Keep scrolling and you will get there.<span style="display:none">just kidding</span>
+	</div>
+</main>
+</body>
+</html>

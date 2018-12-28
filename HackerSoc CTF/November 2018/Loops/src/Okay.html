@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Okay</title>
+	<style>
+body {
+	background: #000;
+	color: #fff;
+	font-family: sans-serif;
+}
+main {
+	background: url();
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+a {
+	color: lightblue;
+	text-decoration: none;
+}
+a:hover {text-decoration:underline}
+#box {
+	width: 465px;
+	height: 240px;
+	background: url(ok-not-ok.png);
+	display: flex;
+}
+	</style>
+</head>
+<body>
+<main>
+	<h1>Okay</h1>
+	<div>
+		<p style="text-align:center">
+			Whatever you do, don't press the red button.
+		</p>
+	</div>
+	<div id="box">
+		<div onclick="location.href='OK.html'" style="
+			background: rgba(99,147,50,0.4);
+			width: 140px;
+			height: 140px;
+			margin: 22px 72px 0 44px;
+			cursor: pointer;
+		"></div>
+		<div onclick="location.href='boom.html'" style="
+			background: rgba(247,0,4,0.4);
+			width: 140px;
+			height: 140px;
+			margin: 22px;
+			cursor: pointer;
+		"></div>
+	</div>
+</main>
+</body>
+</html>

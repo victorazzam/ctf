@@ -1,0 +1,2 @@
+Type the following command in a UNIX shell to get the flag:
+nc hackersoc.tk 12001

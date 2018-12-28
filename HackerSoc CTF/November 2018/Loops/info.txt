@@ -1,0 +1,13 @@
+Explore the area or go down this path for the solution:
+• lead
+• K
+• KK
+• KKK
+• One image perfectly covers another, the hidden one has some tiny text that says "try .htm"
+• Visit KKK.htm instead of KKK.html
+• In the source code, the link "Here is your reward" has "Here" surrounded in a <span> tag with the class attribute set to "try visiting me"
+• Visit Here.html
+• Deduce that the blank word is "there" and visit There.html
+• Learn from the annoying redirect trick in good.html and press escape as soon as any hint of a page is loaded
+• Alternatively use curl or intercept the request with Burpsuite or Wireshark and read the flag from the page
+• Another easy and hacky way to view the flag is to look at the page source, for instance in Chrome type: view-source:https://hackersoc.tk/web2/There.html

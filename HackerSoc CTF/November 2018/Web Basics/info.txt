@@ -1,0 +1,7 @@
+Inspect the source of the seemingly empty flag by right-clicking on it and selecting Inspect.
+
+Right-click on the highlighted <strong> element and select Edit as HTML.
+
+This is the result: <strong>CTF{<!-- nothing to see here -->}</strong>
+
+So the flag is: CTF{<!-- nothing to see here -->}

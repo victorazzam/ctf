@@ -1,0 +1,36 @@
++=============+
+| Information |
++=============+
+
+Event name:	HackerSoc CTF
+Start time:	23.11.2018 21:00
+End time:	30.11.2018 20:00
+Prizes:		Yes
+
+
++============+
+| Challenges |
++============+
+
+Name			Category	Value	Flag
+----			--------	-----	----
+Intro			Beginner	1	CTF{give_me_something_harder}
+Pwn Basics		Beginner	5	CTF{l00king_l1ke_4_h4x0r}
+Forensics Basics	Beginner	5	CTF{f0r3nsics_is+easy}
+Web Basics		Beginner	5	CTF{<!-- nothing to see here -->}
+Reversing Basics	Beginner	5	CTF{r3verse_eng1neering_a1nt_e4sy}
+Recon Basics		Beginner	5	CTF{France}
+Crypto Basics		Beginner	5	CTF{b4se-3ncoding-i5-n0t-encrypt1on}
+Funky Math		Pwn		25	CTF{1_Kn0w_H0W_t0_m4tH_}
+Melons			Pwn		50	CTF{MeLon$n0lEm}
+Broken Zipper		Forensics	25	CTF{rePaiRing-c0rrupt-f1Les}
+Flag Smugglers		Forensics	50	CTF{I_TH1NK_I_SH0UlD_b3_U51NG_TLS}
+Hidden Access		Web		25	CTF{p00r-4uthentic4ti0n-a6eb734f}
+Loops			Web		50	CTF{90f84a8da473fb517c4877a2eed67448}
+HTTP			Web		50	CTF{let_the_br0wser_d0_the__hard_w0rk_for_y0u}
+Force			Web		75	CTF{ivehadenoughofyour1337games}
+Brain			Reversing	25	CTF{es0t3ric_14ngu4g3}
+Jail			Reversing	50	CTF{such_4_w34k_s4ndb0x}
+History			Recon		25	ITB hosts Open evening on April 20th from 4 til 7. Visit http://bit.ly/OpenEveningApril2010
+Backup			Recon		50	CTF{archiv1ng_c4n_b3_u5eful}
+Exclusive		Crypto		25	CTF{th1s_m4y_b3_a_f0rm-of_encrypt1on-but-itisvery..weak}

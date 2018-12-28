@@ -1,0 +1,93 @@
+Refer to solve.py for a Python 3 solution. Here is an example run:
+
+ _____     _
+|     |___| |___ ___ ___
+| | | | -_| | . |   |_ -|
+|_|_|_|___|_|___|_|_|___|
+
+
+Here in New Mexico at Watermelon Mountain Ranch we harvest the best melons every season. Our strict quality control policy ensures that only the best melons make it to grocery stores.
+
+We are pleased to have you on our accounting team, there's just a basic test you need to complete to make it official. We will show you 400 of our latest produce in sets of 20 and you must calculate the monthly profit that each set will yield, as an integer.
+
+Be attentive and make sure to discard anything that yields 50 or less. The ranking of melons is as follows:
+
+Melon Dollars
+===== =======
+  Ø     317
+  0     220
+  O     101
+  ø     50
+  o     46
+
+Example
+=======
+Produce: ø Ø Ø ø 0 0 0 0 ø Ø O O ø ø 0 0 o ø ø Ø
+Monthly profit: 2790
+
+To keep up with our quality you must also keep up with our pace, so there will be a time limit. Good luck!
+
+
+
+Produce: 0 Ø Ø o ø o o Ø Ø Ø 0 o o o O O 0 Ø 0 O
+Monthly profit: 3085
+
+Produce: o ø 0 o 0 ø ø ø 0 o 0 Ø ø ø O O o 0 0 o
+Monthly profit: 1839
+
+Produce: Ø O o o ø O 0 0 Ø Ø o o 0 o ø 0 O O o Ø
+Monthly profit: 2552
+
+Produce: o 0 O Ø ø 0 o 0 o o Ø ø Ø Ø Ø Ø o o ø 0
+Monthly profit: 2883
+
+Produce: ø ø o o 0 Ø ø ø Ø 0 0 0 Ø O o 0 O o O ø
+Monthly profit: 2354
+
+Produce: ø Ø o ø ø o Ø Ø ø 0 o Ø Ø Ø ø 0 o o o Ø
+Monthly profit: 2659
+
+Produce: 0 O ø o Ø O o ø o ø O ø O ø ø 0 0 Ø O 0
+Monthly profit: 2019
+
+Produce: ø ø o O O Ø 0 o ø 0 o Ø 0 ø Ø Ø o 0 Ø 0
+Monthly profit: 2887
+
+Produce: 0 O Ø Ø o Ø 0 Ø Ø Ø 0 Ø Ø o 0 O Ø Ø 0 0
+Monthly profit: 4692
+
+Produce: o o O ø O O O Ø O Ø o O ø 0 Ø O O O o O
+Monthly profit: 2181
+
+Produce: O 0 0 o O O 0 0 0 0 ø o 0 O ø 0 0 Ø o 0
+Monthly profit: 2921
+
+Produce: O Ø o ø O O o 0 ø Ø 0 O O o ø 0 ø o o Ø
+Monthly profit: 2116
+
+Produce: o 0 ø 0 o O O ø Ø 0 ø o O 0 0 o Ø o 0 ø
+Monthly profit: 2257
+
+Produce: 0 o ø O ø ø o ø ø o ø O O Ø 0 ø 0 Ø 0 o
+Monthly profit: 1817
+
+Produce: o O O O o O ø o O O o 0 o O Ø ø O 0 O Ø
+Monthly profit: 1983
+
+Produce: 0 0 o Ø Ø o 0 Ø O ø ø ø Ø ø Ø O O O Ø 0
+Monthly profit: 3186
+
+Produce: Ø O O o 0 Ø ø O ø O Ø O O o o O Ø o 0 Ø
+Monthly profit: 2732
+
+Produce: O ø o O ø o o O ø 0 O o ø o Ø O Ø O O 0
+Monthly profit: 1781
+
+Produce: 0 Ø Ø Ø O o o O ø o ø ø ø o O Ø Ø O O Ø
+Monthly profit: 2627
+
+Produce: o ø o ø ø ø Ø o ø Ø 0 Ø ø 0 Ø o ø o Ø 0
+Monthly profit: 2245
+
+
+Well done, you're hired! CTF{MeLon$n0lEm}

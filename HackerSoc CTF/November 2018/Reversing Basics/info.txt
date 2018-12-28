@@ -1,0 +1,2 @@
+Decompile the .class file and find the flag in the source code, for example with the following website:
+http://www.javadecompilers.com

@@ -1,0 +1,11 @@
+Challenge
+=========
+A red image? What does it say?
+
+Solution
+========
+Either use StegSolve.jar or turn up the exposure by a lot and the saturation by a small amount to get: flag{sne4ky_st3go_3EDF8A92C5}
+
+Setup
+=====
+Photoshop image of a single colour and some text of an unnoticeably different colour.

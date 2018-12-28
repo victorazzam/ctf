@@ -1,0 +1,59 @@
+
+Challenge
+=========
+
+How deep can you go?
+
+Hint: Tools such as binwalk, strings and exiftool can help you with these types of tasks.
+
+
+Solution
+========
+
+Use binalk to extract "embedded.gif" contents.
+
+Part 1
+------
+Unzip 1.zip
+Bash command: for i in *; do strings $i | tail -1; done
+One of the lines is "Part 1: ZmxhZ3tvYnZ"
+
+Part 2
+------
+Use exiftool on 2.png and read the "Software" tag.
+
+Part 3
+------
+Use binwalk on 3.gif and find the string in ./_3.gif.extracted/word/document.xml
+
+Part 4
+------
+Use exiftool on 4.jpg and read the "Image Description" tag.
+OR
+Bash command: strings 4.jpg | grep Part
+
+Add all parts and decode from Base64 to get: flag{obviouS+steG=iS-obviouS_}
+
+
+Setup
+=====
+
+Inspired by: https://bannsecurity.com/index.php/home/10-ctf-writeups/25-th3jackers-ctf-2015-ultimate-steg
+
+flag{obviouS+steG=iS-obviouS_}
+
+Encode with Base64.	ZmxhZ3tvYnZpb3VTK3N0ZUc9aVMtb2J2aW91U199Cg==
+
+Split into 4 chunks.	ZmxhZ3tvYnZ pb3VTK3N0ZU c9aVMtb2J2a W91U199Cg==
+
+Hide as follows:
+Part 1 at the end of one image in a ZIP of 100 identical images.
+Part 2 in EXIF "Software" tag.
+Part 3 in a Word document embedded in a GIF file.
+Part 4 in EXIF "Image Description" tag.
+
+Compress everything as a ZIP and embed in a GIF file with a bit of Python:
+>>> out = file("embedded.gif", "wb")
+>>> out.write(file("giphy.gif", "rb").read())
+>>> out.write(file("zip.zip", "rb").read())
+>>> out.close()

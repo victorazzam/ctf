@@ -1,0 +1,59 @@
+
+Challenge
+=========
+
+Look beyond what you see ~ Rafiki
+
+Hint: Not another esolang! -_-
+
+(The hint costs 50 points.)
+
+
+Solution
+========
+
+Step 1 - Fiddle around with the pixels to see that only the first few are different.
+Step 2 - Reverse the filename because the last letter is uppercase and Google it.
+Step 3 - Extract all the relevant pixels from the image part.
+Step 4 - Connect the dots that it's a Brainfuck clone, start finding and replacing.
+Step 5 - Run the brainfuck code in an online interpreter to get flag{INeVeRSaIdiTWaSEaSy}
+
+Code for step 3
+---------------
+$ python
+>>> from PIL import Image
+>>> image = Image.open("retpocniarB.png")
+>>> p = image.load()
+>>> P = [[p[x,y] for x in range(500)] for y in range(500)]
+>>> a = [x for B in P for C in B for x in C][::3]
+>>> b = ""
+>>> for y, i in enumerate(a):
+...    if all(not x for x in a[y:y+20]): break
+...    b += str(i)
+...
+>>> print b
+
+
+Setup
+=====
+
+flag{INeVeRSaIdiTWaSEaSy}
+
+Translate to Brainfuck.
+
+Translate to Braincopter (store as s).
+
+$ python
+>>> from PIL import Image
+>>> data, c = [], 0
+>>> s = "3363333302170422222243333333333342222224633333021704036333333302170422222403363333302170340263330221704222630222217024036333021703334242222222222222243633330222170243363022222170242222240363330217034222422222222224036333021703346302222222170426333333021704036333021703343633022217033422224"
+>>> for i in range(500):
+...     row = []
+...     for x in range(500):
+...         row.append((s[c], s[c], s[c]) if c < len(s) else (0,0,0))
+...         c += 1
+...     data.append(row)
+... 
+>>> img = Image.new("RGB", (500, 500))
+>>> img.putdata([tuple(map(int, i + (255,))) for x in data for i in x])
+>>> img.save("retpocniarB.png", "PNG")

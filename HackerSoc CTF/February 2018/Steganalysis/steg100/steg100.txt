@@ -1,0 +1,7 @@
+Challenge
+=========
+Strong PDF... many security... such amaze... much wow!
+
+Solution
+========
+Extract PDF to get 3 images, the last image says: flag{/*obscurity!==security*/}

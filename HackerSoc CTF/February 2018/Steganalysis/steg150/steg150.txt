@@ -1,0 +1,30 @@
+
+Challenge
+=========
+
+My message is well hidden. Your methods of recovery are insignificant.
+
+File given: bandcamp.wav
+
+
+Solution
+========
+
+Use WavSteg.py by github.com/ragibson:
+python3 WavSteg.py -r -s bandcamp.wav -o output -n 1 -b 1000
+
+file output
+output: Zip archive data, at least v2.0 to extract
+
+Extract zip and read inner file contents: flag{LSB_adoftlalc_72335834}
+
+
+Setup
+=====
+
+amongdozensofflowersflag{LSB_adoftlalc_72335834}therelayalostchild
+
+Place into text file and then ZIP (secret.zip)
+
+Use WavSteg.py by github.com/ragibson:
+python3 WavSteg.py -h -s americanpie-bandcamp.wav -f secret.zip -o bandcamp.wav -n 1

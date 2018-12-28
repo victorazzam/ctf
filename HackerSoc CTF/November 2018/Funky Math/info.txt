@@ -1,0 +1,11 @@
+Refer to solve.py for a Python 3 solution. Here is an example run:
+
+ ___         _          _____     _   _
+|  _|_ _ ___| |_ _ _   |     |___| |_| |_
+|  _| | |   | '_| | |  | | | | .'|  _|   |
+|_| |___|_|_|_,_|_  |  |_|_|_|__,|_| |_|_|
+                |___|
+
+Equation: 9127 + 1359 = 10486
+Correct!
+Here is your reward: CTF{1_Kn0w_H0W_t0_m4tH_}

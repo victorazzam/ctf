@@ -1,0 +1,700 @@
+Mandatory Human Verification
+----------------------------
+    ___               ____
+   |__ \    __  __   |___ \
+      ) |   \ \/ /     __) |
+     / /     >  <     |__ <
+    / /_    /_/\_\    ___) |
+   |____|            |____/
+
+> 6
+
+Write your HTTP requests below. To end a request, hit Enter 3 times.
+You have 60 seconds, go go go!
+
+GET / HTTP/1.1
+Host: example.org
+
+
+HTTP/1.1 200 OK
+Server: example.org
+Date: Mon, 17 Dec 2018 11:30:16 UTC
+Content-Type: text/html; charset=utf-8
+Content-Length: 4901
+Cache-Control: no-cache
+
+<!DOCTYPE>
+<!-- https://codepen.io/codeGeek_Abhi/pen/NBgZVK -->
+<html>
+<head>
+	<title>Home - example.org</title>
+	<style>
+* {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  font-family: sans-serif;
+}
+body {background-color:#edeef0}
+#container {
+  width: 300px;
+  height: 300px;
+}
+.ground {
+  width: 140%;
+  height: 10px;
+  border-radius: 8px;
+  background-color: #292d39;
+  left: -50px;
+  top: 100%;
+}
+.ceiling {
+  height: 4px;
+  width: 130px;
+  border-radius: 7px;
+  background-color: #828592;
+  border: 5px solid #292d39;
+  transform-origin: left;
+  left: 220px;
+  transition: all 400ms;
+}
+.ceiling:nth-child(1) {
+  transform: rotate(-125deg) translate(-5px);
+}
+.ceiling:nth-child(2) {
+  z-index: -1;
+  transform: rotate(125deg) translate(-5px);
+}
+.ceils {
+  transform: rotate(-90deg);
+}
+.body {
+  width: 160px;
+  height: 150px;
+  border-radius: 2px;
+  top: 120px;
+  z-index: -1;
+  border-left: 5px solid #292d39;
+  border-right: 5px solid #292d39;
+}
+.floor {
+  width: 80%;
+  height: 12px;
+  top: 95%;
+  border: 4px solid #292d39;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #edeef0;
+}
+.door {
+  width: 40px;
+  height: 70px;
+  top: 50%;
+  left: -90px;
+  border: 4px solid #292d39;
+  background-color: #717483;
+}
+.knob {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  left: -20px;
+  background-color: #292d39;
+}
+.window {
+  width: 40px;
+  height: 40px;
+  background-color: #717483;
+  border-radius: 5px;
+  left: 70px;
+  top: 40px;
+  border: 6px solid #292d39;
+}
+.h {
+  height: 5px;
+  background-color: #292d39;
+}
+.v {
+  width: 5px;
+  background-color: #292d39;
+}
+.support {
+  top: 115%;
+  width: 150%;
+  left: -14px;
+  height: 7px;
+  background-color: white;
+  border-radius: 10px;
+  border: 4px solid #292d39;
+}
+.top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 7px solid #292d39;
+  top: -120px;
+  background-color: #717483;
+}
+.chimney {
+  width: 50px;
+  height: 50px;
+  top: -150px;
+  z-index: -1;
+  left: 115px;
+}
+.cTop {
+  width: 70%;
+  left: 4px;
+  height: 6px;
+  top: 24px;
+  border-radius: 6px;
+  border: 5px solid #292d39;
+}
+.cBot {
+  width: 10px;
+  top: 50px;
+  height: 20px;
+  border-radius: 6px;
+  border: 5px solid #292d39;
+}
+.vapour {
+  width: 4px;
+  height: 10px;
+  background-color: #292d39;
+  border-radius: 10px;
+  top: -20px;
+  animation: evaporate 500ms infinite;
+}
+.vapour:nth-child(1) {
+  animation-delay: 200ms;
+}
+.vapour:nth-child(2) {
+  left: -15px;
+  animation-delay: 400ms;
+}
+.vapour:nth-child(3) {
+  left: -30px;
+  animation-delay: 600ms;
+}
+.vapour:nth-child(4) {
+  left: 15px;
+  animation-delay: 800ms;
+}
+.vapour:nth-child(5) {
+  left: 30px;
+  animation-delay: 1000ms;
+}
+.vapour:nth-child(6) {animation-delay:1200ms}
+.vapour:nth-child(7) {animation-delay:1400ms}
+.vapour:nth-child(8) {animation-delay:1600ms}
+.vapour:nth-child(9) {animation-delay:1800ms}
+.tree {
+  width: 70px;
+  height: 150px;
+  left: 97%;
+  top: 50%;
+}
+.stem {
+  height: 70%;
+  width: 5px;
+  border-radius: 10px;
+  top: 40px;
+  background-color: #292d39;
+}
+.main {
+  width: 100px;
+  height: 140px;
+  background-color: #a1db9e;
+  border-radius: 70% 70% 70% 70%;
+  left: -20px;
+  top: -60px;
+  border: 5px solid #292d39;
+}
+.branch {
+  width: 5px;
+  height: 40px;
+  background-color: #292d39;
+  border-radius: 5px;
+}
+.branch:nth-child(1) {
+  left: 30px;
+  top: 20px;
+  transform: rotate(50deg);
+}
+.branch:nth-child(2) {
+  left: -30px;
+  top: 50px;
+  transform: rotate(-60deg);
+}
+@keyframes evaporate {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+h1 {
+  position: relative;
+  display: inline;
+  margin: 1em auto;
+  text-align: center;
+}
+main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+	</style>
+</head>
+<body>
+	<main>
+		<p>
+			<h1>Home Page</h1>
+			Please <a href='/login'>login</a> to access your data.
+		</p>
+	</main>
+	<div id="container">
+		<div class="chimney">
+			<div class="cTop">
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+			</div>
+			<div class="cBot"></div>
+		</div>
+		<div class="ceils">
+			<div class="ceiling">
+				<div class="cover"></div>
+			</div>
+			<div class="ceiling">
+				<div class="cover"></div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="top">
+				<div class="h"></div>
+				<div class="v"></div>
+			</div>
+			<div class="door">
+				<div class="knob"></div>
+			</div>
+			<div class="window">
+				<div class="h"></div>
+				<div class="v"></div>
+				<div class="support"></div>
+			</div>
+		</div>
+		<div class="floor"></div>
+		<div class="tree">
+			<div class="main">
+				<div class="branch"></div>
+				<div class="branch"></div>
+			</div>
+			<div class="stem"></div>
+		</div>
+		<div class="ground"></div>
+	</div>
+</body>
+</html>
+
+
+GET /login HTTP/1.1
+Host: example.org
+
+
+HTTP/1.1 200 OK
+Server: example.org
+Date: Mon, 17 Dec 2018 11:30:58 UTC
+Content-Type: text/html; charset=utf-8
+Content-Length: 1345
+Cache-Control: no-cache
+
+<!DOCTYPE>
+<html>
+<head>
+	<title>Login - example.org</title>
+	<style>
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
+main {
+    width: 400px;
+    margin: 0 auto;
+    padding: 120px 0;
+    color: #888;
+    font-family: "Karla";
+    text-align: center;
+}
+main h1 {
+    font-size: 2rem;
+    padding-bottom: 0;
+}
+main a {
+    text-decoration: none;
+    color: #888;
+    border: 0;
+    background: transparent;
+    margin-top: 30px;
+    position: relative;
+    outline: 0;
+    transition: color 0.5s;
+}
+main a:hover {color:rgba(14, 190, 255, 0.8)}
+main form {font-size:62px}
+input {
+    width: 100%;
+    height: 36px;
+	margin: 10px 0;
+    border: 0;
+    border-bottom: 1px solid coral;
+    font-family: "Ubuntu";
+    font-size: 26px;
+    transition: background 0.5s;
+}
+#submit {
+	margin: 1em auto;
+	border: none;
+	cursor: pointer;
+}
+#submit:hover {color:coral}
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Login form</h1>
+		<br>
+		<div id="response"></div>
+		<form action method="post">
+			<input type='text' id='username' name="User" placeholder="Username">
+			<input type='password' id='password' name="Pswd" placeholder="Password">
+			<input type="submit" id="submit" value="Submit">
+		</form>
+	</main>
+</body>
+</html>
+
+
+POST /login HTTP/1.1
+Host: example.org
+
+User=admin&Pswd=lamepass
+
+
+HTTP/1.1 303 See Other
+Location: /
+Server: example.org
+Date: Mon, 17 Dec 2018 11:31:36 UTC
+Content-Type: text/html; charset=utf-8
+Content-Length: 53
+Cache-Control: no-cache
+Set-Cookie: session=Jcy6mWgxXQHrVPwAC57Et0IvYjBkshiT; path=/; expires=Mon, 31 Dec 2018 23:59:00 -0000
+
+<h2 style='font-family:sans-serif'>303 See Other</h2>
+
+
+GET / HTTP/1.1
+Host: example.org
+Cookie: session=Jcy6mWgxXQHrVPwAC57Et0IvYjBkshiT
+
+
+HTTP/1.1 200 OK
+Server: example.org
+Date: Mon, 17 Dec 2018 11:32:16 UTC
+Content-Type: text/html; charset=utf-8
+Content-Length: 4893
+Cache-Control: no-cache
+
+<!DOCTYPE>
+<!-- https://codepen.io/codeGeek_Abhi/pen/NBgZVK -->
+<html>
+<head>
+	<title>Home - example.org</title>
+	<style>
+* {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  font-family: sans-serif;
+}
+body {background-color:#edeef0}
+#container {
+  width: 300px;
+  height: 300px;
+}
+.ground {
+  width: 140%;
+  height: 10px;
+  border-radius: 8px;
+  background-color: #292d39;
+  left: -50px;
+  top: 100%;
+}
+.ceiling {
+  height: 4px;
+  width: 130px;
+  border-radius: 7px;
+  background-color: #828592;
+  border: 5px solid #292d39;
+  transform-origin: left;
+  left: 220px;
+  transition: all 400ms;
+}
+.ceiling:nth-child(1) {
+  transform: rotate(-125deg) translate(-5px);
+}
+.ceiling:nth-child(2) {
+  z-index: -1;
+  transform: rotate(125deg) translate(-5px);
+}
+.ceils {
+  transform: rotate(-90deg);
+}
+.body {
+  width: 160px;
+  height: 150px;
+  border-radius: 2px;
+  top: 120px;
+  z-index: -1;
+  border-left: 5px solid #292d39;
+  border-right: 5px solid #292d39;
+}
+.floor {
+  width: 80%;
+  height: 12px;
+  top: 95%;
+  border: 4px solid #292d39;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #edeef0;
+}
+.door {
+  width: 40px;
+  height: 70px;
+  top: 50%;
+  left: -90px;
+  border: 4px solid #292d39;
+  background-color: #717483;
+}
+.knob {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  left: -20px;
+  background-color: #292d39;
+}
+.window {
+  width: 40px;
+  height: 40px;
+  background-color: #717483;
+  border-radius: 5px;
+  left: 70px;
+  top: 40px;
+  border: 6px solid #292d39;
+}
+.h {
+  height: 5px;
+  background-color: #292d39;
+}
+.v {
+  width: 5px;
+  background-color: #292d39;
+}
+.support {
+  top: 115%;
+  width: 150%;
+  left: -14px;
+  height: 7px;
+  background-color: white;
+  border-radius: 10px;
+  border: 4px solid #292d39;
+}
+.top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 7px solid #292d39;
+  top: -120px;
+  background-color: #717483;
+}
+.chimney {
+  width: 50px;
+  height: 50px;
+  top: -150px;
+  z-index: -1;
+  left: 115px;
+}
+.cTop {
+  width: 70%;
+  left: 4px;
+  height: 6px;
+  top: 24px;
+  border-radius: 6px;
+  border: 5px solid #292d39;
+}
+.cBot {
+  width: 10px;
+  top: 50px;
+  height: 20px;
+  border-radius: 6px;
+  border: 5px solid #292d39;
+}
+.vapour {
+  width: 4px;
+  height: 10px;
+  background-color: #292d39;
+  border-radius: 10px;
+  top: -20px;
+  animation: evaporate 500ms infinite;
+}
+.vapour:nth-child(1) {
+  animation-delay: 200ms;
+}
+.vapour:nth-child(2) {
+  left: -15px;
+  animation-delay: 400ms;
+}
+.vapour:nth-child(3) {
+  left: -30px;
+  animation-delay: 600ms;
+}
+.vapour:nth-child(4) {
+  left: 15px;
+  animation-delay: 800ms;
+}
+.vapour:nth-child(5) {
+  left: 30px;
+  animation-delay: 1000ms;
+}
+.vapour:nth-child(6) {animation-delay:1200ms}
+.vapour:nth-child(7) {animation-delay:1400ms}
+.vapour:nth-child(8) {animation-delay:1600ms}
+.vapour:nth-child(9) {animation-delay:1800ms}
+.tree {
+  width: 70px;
+  height: 150px;
+  left: 97%;
+  top: 50%;
+}
+.stem {
+  height: 70%;
+  width: 5px;
+  border-radius: 10px;
+  top: 40px;
+  background-color: #292d39;
+}
+.main {
+  width: 100px;
+  height: 140px;
+  background-color: #a1db9e;
+  border-radius: 70% 70% 70% 70%;
+  left: -20px;
+  top: -60px;
+  border: 5px solid #292d39;
+}
+.branch {
+  width: 5px;
+  height: 40px;
+  background-color: #292d39;
+  border-radius: 5px;
+}
+.branch:nth-child(1) {
+  left: 30px;
+  top: 20px;
+  transform: rotate(50deg);
+}
+.branch:nth-child(2) {
+  left: -30px;
+  top: 50px;
+  transform: rotate(-60deg);
+}
+@keyframes evaporate {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+h1 {
+  position: relative;
+  display: inline;
+  margin: 1em auto;
+  text-align: center;
+}
+main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+	</style>
+</head>
+<body>
+	<main>
+		<p>
+			<h1>Home Page</h1>
+			CTF{let_the_br0wser_d0_the__hard_w0rk_for_y0u}
+		</p>
+	</main>
+	<div id="container">
+		<div class="chimney">
+			<div class="cTop">
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+				<div class="vapour"></div>
+			</div>
+			<div class="cBot"></div>
+		</div>
+		<div class="ceils">
+			<div class="ceiling">
+				<div class="cover"></div>
+			</div>
+			<div class="ceiling">
+				<div class="cover"></div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="top">
+				<div class="h"></div>
+				<div class="v"></div>
+			</div>
+			<div class="door">
+				<div class="knob"></div>
+			</div>
+			<div class="window">
+				<div class="h"></div>
+				<div class="v"></div>
+				<div class="support"></div>
+			</div>
+		</div>
+		<div class="floor"></div>
+		<div class="tree">
+			<div class="main">
+				<div class="branch"></div>
+				<div class="branch"></div>
+			</div>
+			<div class="stem"></div>
+		</div>
+		<div class="ground"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+First and foremost, complete the initial captcha to prove you are a human. This is to ensure that you do the challenge yourself and not from a web browser.
+
+The HTTP/1.1 shell does the same thing as an HTTP/1.1 server - respond to valid HTTP requests.
+
+Certain details in the challenge description are emphasised, like the host name and user credentials.
+
+The goal is to login as that user, so you must first find out where to send the login request.
+
+To start off, send a GET request asking for the home page:
+GET / HTTP/1.1
+Host: example.org
+
+The first line of an HTTP request is broken down into 3 parts:
+• Request method (GET, POST, PUT and others)
+• Path (file or directory to access)
+• HTTP version (usually 1.1)
+
+The second line simply states the desired host name. Although it can be omitted, the line is enforced in this challenge for best practice.
+
+After sending the request, an HTTP response is sent back. It contains a header and a body whose length is specified in the header.
+
+The body is what your web browser parses and displays when you visit a web page. It usually contains HTML code, but can also be MP3, JPEG and any other file type.
+
+Somewhere in the body there is the following text:
+<h1>Home Page</h1>
+Please <a href='/login'>login</a> to access your data.
+
+The <a> tag clearly points to "/login" so try and request that page:
+GET /login HTTP/1.1
+Host: example.org
+
+The shell responds with an HTML login form. The action attribute is not set, meaning that form data should be sent to the same page. The method is set to "post" so it will require a POST request.
+
+The inputs that need to be sent should have a name attribute, in this case User and Pswd, which are the username and password.
+
+Send the credentials from the challenge description in a POST request to the login page:
+POST /login HTTP/1.1
+Host: example.org
+
+User=admin&Pswd=lamepass
+
+Notice how there is a blank line between the header and body of the request. This is the correct syntax for a POST request.
+
+The shell responds with a 303 redirect. This means that the requested resource was granted at another location, which is specified in the header.
+
+The following cookie is also present in the response:
+Set-Cookie: session=Jcy6mWgxXQHrVPwAC57Et0IvYjBkshiT; path=/; expires=Mon, 31 Dec 2018 23:59:00 -0000
+
+The path of the next request should match the Location header field in the 303 response, which is the home page.
+
+Since the login worked and a cookie was generated, use the cookie in the next request to continue the session.
+
+The final request should look something like this:
+GET / HTTP/1.1
+Host: example.org
+Cookie: session=Jcy6mWgxXQHrVPwAC57Et0IvYjBkshiT
+
+The shell then responds with the home page again, except this time with a flag.
+
+Refer to log.txt for an example run.

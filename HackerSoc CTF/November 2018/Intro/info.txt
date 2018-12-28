@@ -1,0 +1,1 @@
+CTF{give_me_something_harder}

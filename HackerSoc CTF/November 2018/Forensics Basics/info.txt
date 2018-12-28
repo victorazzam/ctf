@@ -1,0 +1,5 @@
+The metadata of a PDF file usually contains the name of the software that the file was encoded with.
+
+Get exiftool and use it on secret.pdf or open File > Properties in Adobe Acrobat.
+
+The flag should be visible beside the "Creator" or "Application" keyword.

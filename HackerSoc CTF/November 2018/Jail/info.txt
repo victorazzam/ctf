@@ -1,0 +1,15 @@
+The code evaluates user input as follows:
+• Accept no more than 50 characters
+• Remove any instances of letters f g l or t
+• Evaluate the remaining string as code
+• Print the result if successful
+
+To solve this challenge, find a string no more than 50 in length that can open the file flag.txt and show its contents.
+
+The file I/O part is solved with a simple open().read() statement, where open() opens the file in read mode and .read() returns the file contents.
+
+Since "flag.txt" contains all of the banned letters, another way to replicate it is to use hex strings.
+
+Replace every character in "flag.txt" with "\x" followed by that character's hex value in the ASCII table.
+
+open("\x66\x6c\x61\x67\x2e\x74\x78\x74").read()

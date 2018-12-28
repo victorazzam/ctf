@@ -1,0 +1,9 @@
+Login as anything to be presented with a welcome message.
+
+As with most login systems, some form of local storage is used to store the fact that the user has authenticated. Here it appears to be a cookie.
+
+In this case, the cookie is simply "admin=false" as can be seen in the HTTP header.
+
+Requesting https://hackersoc.tk/web1/ with "admin" set to "true" will reveal the flag.
+
+curl -A 'Mozilla/5.0' -d 'user=A&pass=B' -b 'admin=true' https://hackersoc.tk/web1/

@@ -1,0 +1,7 @@
+Backup files are common among UNIX command line editors.
+
+Emacs was the first to appropriate backups ending in a tilde.
+
+Later vim followed suit, and then it became a somewhat popular convention.
+
+Simply visiting https://hackersoc.tk/index.html~ should download the backup page containing the flag.

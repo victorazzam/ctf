@@ -1,0 +1,23 @@
+The code looks messy, but most of it serves as a distraction.
+
+On line 7 the dangerous function parse_str() is called. The PHP manual says:
+"Using this function without the result parameter is highly DISCOURAGED"
+
+The first parameter of parse_str() is evaluated as a URL encoded string and the key-value pairs are set as variables in the current scope, or in an array if one is provided as a 2nd parameter.
+
+Seeing as only 1 parameter was passed, $_SERVER['QUERY_STRING'] will provide parse_str() all the GET request keywords to be assigned to variables.
+
+To proceed, page must be set to the value '$_SERVER[REMOTE_ADDR]' (which is not the user IP address, note the single quotes). So set page to that value via a GET parameter.
+
+Ignore the "user" and "pass" values, because if they aren't specified then they aren't processed.
+
+The echo statement shows a ternary operator:
+• The condition is stated before the question mark.
+• If condition = true, left of the colon will be used.
+• If condition = false, right of the colon will be used.
+
+This will print $_ (the flag, imported from secret.php) if $secret is a string of the value "6023b8f706fa7e49edd754485a2b642f493940d1" or else "no flag for u :P" if the condition isn't met.
+
+So it is obvious what to do now: set "page" and "secret" accordingly in the URL and the flag will appear.
+
+https://hackersoc.tk/web3/?page=$_SERVER[REMOTE_ADDR]&secret=6023b8f706fa7e49edd754485a2b642f493940d1

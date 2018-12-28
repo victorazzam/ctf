@@ -1,0 +1,11 @@
+As the hint states, the zip file is both corrupted and password protected.
+
+Reading https://en.wikipedia.org/wiki/Zip_(file_format) and looking at other zip files in a hex editor, it is clear that the zip header is wrong.
+
+The minimum version (offset 0x4, 2 bytes in length) is written as 0x0A04 (little endian) which is not valid, whereas 0x000A (version 1.0 uncompressed) would be considered valid.
+
+Deleting the 0x04 byte at (coincidentally) its own offset makes the zip file function properly.
+
+The final step is to extract, but there is a password in the way.
+
+Guessing a few common passwords found online shows that "qwerty" is the correct password and extracts flag.zip successfully.

@@ -1,0 +1,21 @@
+Open evidence.pcap in Wireshark and read the Info header of the packets.
+
+Packet number 70 Info header reads: POST / HTTP/1.1 (application/zip)
+
+This means that a zip file is being sent via an HTTP request.
+
+Navigate to File > Export Objects > HTTP, click on packet 70 and save it somewhere.
+
+Open the file and notice how the letters KP and PK stand out, resembling an actual zip file.
+
+Extract the data starting from after the first blank line until right before the next WebKitFormBoundary line (lines are separated with CR LF "\r\n").
+
+Create a new file from the extracted data and open in a hex editor.
+
+Notice how the zip file signature is incorrect - it is simply reversed.
+
+Reverse the order of the first 4 bytes and save the file.
+
+Attempt to open the file and, when asked for a password, try some common strings found in wordlists like rockyou.txt or elsewhere.
+
+Correct password for zip file: chicken

@@ -1,0 +1,4 @@
+Convert the text from base64 to ASCII.
+
+Base64:	Q1RGe2I0c2UtM25jb2RpbmctaTUtbjB0LWVuY3J5cHQxb259
+ASCII:	CTF{b4se-3ncoding-i5-n0t-encrypt1on}

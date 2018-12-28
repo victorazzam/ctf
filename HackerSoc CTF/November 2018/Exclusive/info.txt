@@ -1,0 +1,33 @@
+The capitalised letters hint at repeated XOR encryption.
+
+Since the flag format is known, get the key by XORing the known part with the cipher text, i.e. "CTF{" with "rguL"
+
+Use the decimal values of the ASCII text, XOR them and convert the result to ASCII again:
+• "C" ^ "r" = 67 ^ 114 = 49 = "1"
+• "T" ^ "g" = 84 ^ 103 = 51 = "3"
+• "F" ^ "u" = 70 ^ 117 = 51 = "3"
+• "{" ^ "L" = 123 ^ 76 = 55 = "7"
+
+It's pretty clear that "1337" is the key.
+
+Verify this by consecutively XORing the rest of the cipher text with the supposed key.
+
+Here's how the challenge was set up:
+------------------------------------
+Python 3.7.0 (default, Jul  2 2018, 04:05:09)
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> # Encrypt:
+...
+>>> key = "1337"
+>>> flag = "CTF{th1s_m4y_b3_a_f0rm-of_encrypt1on-but-itisvery..weak}"
+>>> c = "".join(chr(ord(i) ^ ord(key[y % 4])) for y, i in enumerate(flag))
+>>> c
+'rguLE[\x02Dn^\x07NnQ\x00hPlU\x07C^\x1eXWlVYRAJGE\x02\\Y\x1cQFC\x1cZG^BEVEH\x1d\x1d@TRXJ'
+>>>
+>>>
+>>> # Decrypt:
+...
+>>> d = "".join(chr(ord(i) ^ ord(key[y % 4])) for y, i in enumerate(c))
+>>> d
+'CTF{th1s_m4y_b3_a_f0rm-of_encrypt1on-but-itisvery..weak}'

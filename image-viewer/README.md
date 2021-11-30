@@ -1,4 +1,4 @@
-## Challenge
+## Image Viewer
 
 Look beyond what you see. Take a leap of faith.
 

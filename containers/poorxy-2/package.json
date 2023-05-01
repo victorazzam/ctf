@@ -1,0 +1,21 @@
+{
+	"name": "poorxy",
+	"version": "2.0.0",
+	"description": "Poorxy - a poor web image proxy.",
+	"author": {
+		"name": "Victor Azzam",
+		"email": "hi@wftc.xyz",
+		"url": "https://wftc.xyz"
+	},
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"ejs": "^3.1.6",
+		"express": "^4.16.1",
+		"netmask": "1.0.6",
+		"private-ip": "1.0.5",
+		"valid-url": "1.0.9"
+	}
+}

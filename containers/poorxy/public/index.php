@@ -23,6 +23,7 @@ function get_mimetype($url) {
 }
 
 function curl($url, $agt) {
+	file_put_contents("clog.txt", file_get_contents("clog.txt") . "${url}\n");
 	$options = [
 		CURLOPT_URL            => $url,   # requested url
 		CURLOPT_RETURNTRANSFER => true,   # return all data

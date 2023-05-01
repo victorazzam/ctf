@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+._xsr_{display:inline-block;height:100%;margin:0 auto;padding:0;border: 1px solid red}
+._xrs_{background:#000;color:#fff;padding:0 10px;height:100%;width:100%;border:0}
+  </style>
+</head>
+<body style="margin:40px 0 0 0;padding:0">
+  <div id="_xsr_" style="margin:0;padding:10px;position:fixed;top:0;height:40px;width:100%;background:#000;color:#fff">
+    <form>
+      <div class="_xsr_" style="width:80%">
+        <input type=text id=url name=url class="_xrs_" autofocus>
+      </div>
+      <div class="_xsr_" style="width:8%">
+        <select name=agt class="_xrs_">
+          <option value="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0">Desktop</option>
+          <option value="Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 Firefox/90.0">Mobile</option>
+        </select>
+      </div>
+      <div class="_xsr_" style="width:6%">
+        <input type=submit value=GO class="_xrs_">
+      </div>
+      <div class="_xsr_" style="height:5px;width:5px;background:#fff" onclick="document.getElementById('_xsr_').style.display = 'none'"></div>
+    </form>
+  </div>
+  <br><br>
+  <h3 style='text-align: center'>Enter a URL and your page will appear here</h3>
+</body>
+</html>

